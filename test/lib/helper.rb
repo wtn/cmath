@@ -6,7 +6,7 @@ Test::Unit::TestCase.include Test::Unit::CoreAssertions
 module Test
   module Unit
     class TestCase
-      def assert_in_delta exp, act, delta = 0.001, msg = nil
+      def assert_in_delta exp, act, delta = 1e-13, msg = nil
         n = (exp - act).abs
         msg = message(msg) {
           "Expected |#{exp} - #{act}| (#{n}) to be <= #{delta}"
